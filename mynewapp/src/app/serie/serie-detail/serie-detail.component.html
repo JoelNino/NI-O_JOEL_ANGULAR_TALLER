@@ -1,0 +1,22 @@
+
+<div class="card">
+  <div class="card-body">
+
+    <div class="row">
+      <div class="col-12">
+        <img
+          class="img-fluid"
+          [src]="serieDetail.image"
+          alt="{{ serieDetail.name }}"
+          style="border-radius: 8px; max-height: 200px; object-fit: cover;"
+        />
+      </div>
+    </div>
+
+
+    <h5 class="card-title mt-3">{{ serieDetail.name }}</h5>
+
+
+    <p class="card-text mt-2">{{ serieDetail.description }}</p>
+  </div>
+</div>

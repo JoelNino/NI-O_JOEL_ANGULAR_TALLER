@@ -1,0 +1,10 @@
+
+td {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+td:hover {
+  text-decoration: underline;
+  color: blue;
+}

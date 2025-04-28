@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http'; // <-- nuevo
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SerieModule } from './serie/serie.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +11,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SerieModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,41 @@
+<div class="header-bar">
+  <img src="https://us.123rf.com/450wm/sanek13744/sanek137441703/sanek13744170300223/73962749-ilustraci%C3%B3n-de-vector-de-icono-de-tv-en-estilo-plano-aislado-sobre-fondo-naranja-con-una-larga.jpg" alt="TV Logo" />
+  <h4 class="mb-0">TV Series</h4>
+</div>
+
+<div class="container mt-4">
+  <div class="row g-0 d-flex">
+
+    <div class="col-md-8">
+      <div class="table-wrapper">
+        <table class="table table-striped">
+          <thead class="thead-light">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Channel</th>
+              <th>Seasons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let serie of series" (click)="onSelected(serie)">
+              <td>{{ serie.id }}</td>
+              <td>{{ serie.name }}</td>
+              <td>{{ serie.channel }}</td>
+              <td>{{ serie.seasons }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="text-end mt-2">
+          <span class="fw-bold">Promedio de temporadas: {{ averageSeasons | number:'1.0-2' }}</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4" *ngIf="selectedSerie">
+      <app-serie-detail [serieDetail]="selectedSerie"></app-serie-detail>
+    </div>
+  </div>
+</div>
